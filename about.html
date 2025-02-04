@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Империя сварки</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let visits = localStorage.getItem('visits') || 0;
+            visits++;
+            localStorage.setItem('visits', visits);
+
+            fetch("https://api.telegram.org/bot7030041200:AAHVxkfhUCclbDyCRoYcnE8LCUSMlH3J4yY/sendMessage", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    chat_id: "-1002360464031",
+                    text: `Новый посетитель на странице О нас. Всего посетителей: ${visits}`
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header-bar">
+        <div class="header-buttons">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О нас</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="contacts.html">Контакты</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>О нас</h1>
+        <p class="responsive-text">Империя сварки - это команда профессионалов, специализирующихся на выполнении сварочных работ любой сложности. Мы предлагаем широкий спектр услуг, включая отопление, навесы и сантехнические работы. Наши специалисты имеют многолетний опыт и гарантируют высокое качество выполнения работ.</p>
+        <p class="responsive-text">Мы стремимся к тому, чтобы каждый наш клиент остался доволен результатом. Если у вас есть вопросы или вы хотите узнать больше о наших услугах, свяжитесь с нами через WhatsApp или Telegram</p>
+        <a href="https://wa.me/message/UB4GWJVBO6IBN1?src=qr" class="whatsapp-button">Написать в WhatsApp</a>
+        <a href="https://t.me/rishat1987" class="telegram-button">Написать в Telegram</a>
+    </div>
+    <!-- ...existing code... -->
+</body>
+</html>
