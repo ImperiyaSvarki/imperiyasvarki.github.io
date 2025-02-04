@@ -1,0 +1,181 @@
+body {
+    text-align: center;
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+.header-bar {
+    background-color: #000000;
+    padding: 20px 0; /* Сделаем полосу шире */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Добавим тень */
+}
+.header-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 100px; /* Увеличим расстояние между кнопками */
+}
+.header-buttons a {
+    text-decoration: none;
+    padding: 15px 30px; /* Увеличим размер кнопок */
+    background-color: #1E88E5;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 5px #1E88E5, 0 0 10px #1E88E5, 0 0 15px #1E88E5, 0 0 20px #1E88E5;
+}
+.header-buttons a:hover {
+    background-color: #1565C0;
+    box-shadow: 0 0 10px #1565C0, 0 0 20px #1565C0, 0 0 30px #1565C0, 0 0 40px #1565C0;
+}
+.header-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 80px; /* Добавим отступ сверху для полосы */
+}
+.header-image img {
+    width: 100%;
+    height: auto;
+}
+.header-image .header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Увеличим ширину текста до 100% */
+    font-size: 8em; /* Увеличим размер текста */
+    font-weight: bold;
+    color: white;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.5); /* Увеличим тень и свечение */
+    text-align: center;
+}
+.header-image .write-button {
+    position: absolute;
+    top: 85%; /* Переместим кнопку еще ниже */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px; /* Увеличим размер кнопки */
+    background-color: #43A047;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 2em; /* Еще больше увеличим размер текста в кнопке */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 5px #43A047, 0 0 10px #43A047, 0 0 15px #43A047, 0 0 20px #43A047;
+}
+.header-image .write-button:hover {
+    background-color: #388E3C;
+    box-shadow: 0 0 10px #388E3C, 0 0 20px #388E3C, 0 0 30px #388E3C, 0 0 40px #388E3C;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 100px; /* Добавим отступ сверху для контента */
+}
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Добавим перенос строк для маленьких экранов */
+}
+.image-text {
+    max-width: 300px;
+    text-align: center;
+    margin-bottom: 20px; /* Добавим отступ снизу для картинок */
+}
+.image-text img {
+    width: 100%;
+    height: 200px; /* Установим фиксированную высоту для картинок */
+    object-fit: cover; /* Обрежем изображение, чтобы оно соответствовало контейнеру */
+    border-radius: 10px;
+}
+.image-text .order-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 5px #007BFF, 0 0 10px #007BFF, 0 0 15px #007BFF;
+}
+.image-text .order-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 10px #0056b3, 0 0 20px #0056b3, 0 0 30px #0056b3;
+}
+.responsive-text {
+    font-size: 2em;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.whatsapp-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 5px #25D366, 0 0 10px #25D366, 0 0 15px #25D366;
+}
+.whatsapp-button:hover {
+    background-color: #128C7E;
+    box-shadow: 0 0 10px #128C7E, 0 0 20px #128C7E, 0 0 30px #128C7E;
+}
+.telegram-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #0088cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 5px #0088cc, 0 0 10px #0088cc, 0 0 15px #0088cc;
+}
+.telegram-button:hover {
+    background-color: #006699;
+    box-shadow: 0 0 10px #006699, 0 0 20px #006699, 0 0 30px #006699;
+}
+@media (max-width: 600px) {
+    .header-buttons {
+        flex-direction: column;
+        gap: 10px; /* Уменьшим расстояние между кнопками на маленьких экранах */
+    }
+    .header-buttons a {
+        padding: 10px 20px; /* Уменьшим размер кнопок на маленьких экранах */
+        font-size: 1em; /* Уменьшим размер текста кнопок на маленьких экранах */
+    }
+    .header-image .header-text {
+        font-size: 4em; /* Уменьшим размер текста на маленьких экранах */
+    }
+    .header-image .write-button {
+        padding: 15px 30px; /* Уменьшим размер кнопки на маленьких экранах */
+        font-size: 1em; /* Уменьшим размер текста в кнопке на маленьких экранах */
+    }
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .responsive-text {
+        font-size: 1.5em; /* Уменьшим размер текста на маленьких экранах */
+    }
+    .whatsapp-button, .telegram-button {
+        padding: 10px 20px; /* Уменьшим размер кнопок на маленьких экранах */
+        font-size: 1em; /* Уменьшим размер текста в кнопках на маленьких экранах */
+    }
+    .image-row {
+        flex-direction: column; /* Переносим картинки в колонку на маленьких экранах */
+    }
+}

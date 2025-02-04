@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- ...existing code... -->
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let visits = localStorage.getItem('visits') || 0;
+            visits++;
+            localStorage.setItem('visits', visits);
+
+            fetch("https://api.telegram.org/bot7030041200:AAHVxkfhUCclbDyCRoYcnE8LCUSMlH3J4yY/sendMessage", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    chat_id: "-1002360464031",
+                    text: `Новый посетитель на главной странице. Всего посетителей: ${visits}`
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header-bar">
+        <div class="header-buttons">
+            <a href="about.html">О нас</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="contacts.html">Контакты</a>
+        </div>
+    </div>
+    <div class="header-image">
+        <img src="depositphotos_227483210-stock-photo-worker-welding-iron-protective-suit.jpg" alt="Header Image">
+        <div class="header-text">ИМПЕРИЯ СВАРКИ</div>
+        <a href="#contacts" class="write-button">Написать</a>
+    </div>
+    <div class="content">
+        <div class="image-row">
+            <div class="image-text">
+                <img src="images (1).jpg" alt="Image 1">
+                <p>Отопление</p>
+                <a href="#order" class="order-button">Заказать</a>
+            </div>
+            <div class="image-text">
+                <img src="images (2).jpg" alt="Image 2">
+                <p>Навесы любой сложности</p>
+                <a href="#order" class="order-button">Заказать</a>
+            </div>
+            <div class="image-text">
+                <img src="images (3).jpg" alt="Image 3">
+                <p>Сантехнические работы</p>
+                <a href="#order" class="order-button">Заказать</a>
+            </div>
+        </div>
+        <p class="responsive-text">Мы выполняем почти любые сварочные работы, чтобы узнать подробнее, напиши нам в WhatsApp</p>
+        <a href="https://wa.me/message/UB4GWJVBO6IBN1?src=qr" class="whatsapp-button">Написать в WhatsApp</a>
+    </div>
+    <!-- ...existing code... -->
+</body>
+</html>
