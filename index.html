@@ -1,24 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-197QFQXS50"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-197QFQXS50');
+</script>
+    <meta name="description" content="Империя сварки – изготовление металлоконструкций, навесов, отопления. Высокое качество, доступные цены.">
+    <meta name="keywords" content="сварка, металлоконструкции, навесы, отопление, изготовление">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- ...existing code... -->
     <link rel="stylesheet" href="styles.css">
+    <title>Империя сварки</title>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            let visits = localStorage.getItem('visits') || 0;
-            visits++;
-            localStorage.setItem('visits', visits);
+            console.log("Current pathname:", window.location.pathname); // Add this line to check the pathname
+            if (window.location.pathname === "/") {
+                let visits = localStorage.getItem('visits') || 0;
+                visits++;
+                localStorage.setItem('visits', visits);
 
-            fetch("https://api.telegram.org/bot7030041200:AAHVxkfhUCclbDyCRoYcnE8LCUSMlH3J4yY/sendMessage", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    chat_id: "-1002360464031",
-                    text: `Новый посетитель на главной странице. Всего посетителей: ${visits}`
+                const botToken = "8051350736:AAGjQtJhedFNj1U5INIR8m00Rtouscexjzk";
+                const chatId = "-1002360464031";
+                const message = `Новый посетитель на главной странице. Всего посетителей: ${visits}`;
+
+                console.log("Sending message to Telegram:", message); // Log the message being sent
+
+                fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        chat_id: chatId,
+                        text: message
+                    })
                 })
-            });
+                .then(response => {
+                    console.log("Fetch response status:", response.status); // Log the response status
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Message sent successfully:', data);
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+            }
         });
     </script>
 </head>
@@ -33,23 +69,29 @@
     <div class="header-image">
         <img src="depositphotos_227483210-stock-photo-worker-welding-iron-protective-suit.jpg" alt="Header Image">
         <div class="header-text">ИМПЕРИЯ СВАРКИ</div>
-        <a href="#contacts" class="write-button">Написать</a>
+        <a href="https://wa.me/message/UB4GWJVBO6IBN1?src=qr" class="write-button">Написать</a>
     </div>
     <div class="content">
         <div class="image-row">
             <div class="image-text">
-                <img src="images (1).jpg" alt="Image 1">
+                <a href="Otopl.html">
+                    <img src="images (1).jpg" alt="Image 1">
+                </a>
                 <p>Отопление</p>
                 <a href="https://wa.me/message/UB4GWJVBO6IBN1?src=qr" class="order-button">Заказать</a>
             </div>
             <div class="image-text">
-                <img src="images (2).jpg" alt="Image 2">
+                <a href="navy.html">
+                    <img src="images (2).jpg" alt="Image 2">
+                </a>
                 <p>Навесы любой сложности</p>
                 <a href="https://wa.me/message/UB4GWJVBO6IBN1?src=qr" class="order-button">Заказать</a>
             </div>
             <div class="image-text">
-                <img src="images (3).jpg" alt="Image 3">
-                <p>Сантехнические работы</p>
+                <a href="KON.html">
+                    <img src="KON.jpg" alt="Image 3">
+                </a>
+                <p>Металоконструкции</p>
                 <a href="https://wa.me/message/UB4GWJVBO6IBN1?src=qr" class="order-button">Заказать</a>
             </div>
         </div>
