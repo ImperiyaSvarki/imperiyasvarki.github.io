@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отопление - Империя сварки</title>
+    <link rel="stylesheet" href="styles-pages.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let visits = localStorage.getItem('visits') || 0;
+            visits++;
+            localStorage.setItem('visits', visits);
+
+            fetch("https://api.telegram.org/bot7030041200:AAHVxkfhUCclbDyCRoYcnE8LCUSMlH3J4yY/sendMessage", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    chat_id: "-1002360464031",
+                    text: `Новый посетитель на странице Навесы. Всего посетителей: ${visits}`
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header-bar">
+        <div class="header-buttons">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О нас</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="contacts.html">Контакты</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Отопление</h1>
+        <div class="image-row">
+            <div class="image-text">
+                <img src="Otopl.jpg" alt="Navy Image 1">
+            </div>
+            <div class="image-text">
+                <img src="O.jpg" alt="Navy Image 2">
+            </div>
+            <div class="image-text">
+                <img src="images (1).jpg" alt="Navy Image 3">
+            </div>
+            <!-- Добавьте больше изображений по необходимости -->
+        </div>
+        <a href="https://wa.me/message/UB4GWJVBO6IBN1?src=qr" class="order-button">Заказать</a>
+    </div>
+    <!-- ...existing code... -->
+</body>
+</html>
